@@ -10,12 +10,16 @@ authors = [
 ]
 description = "Util for marking Django DB fields as deprecated, enabling migration consistency with rolling deploys"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.9"
 dependencies = [
     "django>=4.2,<6.0",
+    "typing_extensions>=3.10.0.0; python_version<'3.10'"
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "License :: OSI Approved :: MIT License",
@@ -137,7 +141,7 @@ filterwarnings = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/django_deprecated_field"] 
+packages = ["src/django_deprecated_field"]
 
 [dependency-groups]
 dev = [
@@ -148,7 +152,6 @@ dev = [
     "twine>=5.0.0",
     "pytest>=8.3.5",
     "pytest-django>=4.11.1",
-    "ruff>=0.11.6",
     "mypy>=1.15.0",
     "django>=4.2.20",
     "structlog>=25.2.0",

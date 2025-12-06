@@ -1,9 +1,14 @@
-from typing import Any, TypeAlias
+from __future__ import annotations
+
+from typing import Any
 
 from django.conf import settings
 from django.db import models
 from django.db.backends.base.base import BaseDatabaseWrapper
 from django.db.models.expressions import Col, Expression
+
+# import from type_extensions required to support python 3.9
+from typing_extensions import TypeAlias
 
 if getattr(settings, "DEPRECATED_FIELD_USE_STRUCTLOG", False):
     from structlog import get_logger
